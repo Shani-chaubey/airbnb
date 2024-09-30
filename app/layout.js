@@ -1,7 +1,8 @@
+import RegisterModal from "@/components/modals/RegisterModal";
+import Navbar from "@/components/navbar/Navbar";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
-import Modal from "@/components/modals/Modal";
+import ToasterProvider from "@/providers/ToasterProvider";
 
 
 export const metadata = {
@@ -18,7 +19,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className} >
-      <Modal isOpen title="Login Model" actionLabel="Submit" />
+      <ToasterProvider />
+      <RegisterModal />
       <Navbar />
         {children}
       </body>

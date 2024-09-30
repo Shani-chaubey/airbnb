@@ -56,7 +56,7 @@ const Modal = ({ isOpen, onClose, onSubmit, title, body, footer, actionLabel, di
                             {/* Header */}
                             <div className="flex items-center justify-center p-6 rounded-t relative border-b-[1px]  ">
                                 <button onClose={handleClose} className="absolute p-1 transition border-0 right-9 hover:opacity-70">
-                                    <IoMdClose size={16} />
+                                    <IoMdClose size={16} onClick={onClose} />
                                 </button>
                                 <div className="text-lg font-semibold">
                                     {title}
@@ -70,7 +70,7 @@ const Modal = ({ isOpen, onClose, onSubmit, title, body, footer, actionLabel, di
 
 
                             {/* Footer */}
-                            <div className="flex flex-col gap-2 p-6">
+                            <div className="flex flex-col gap-2 p-6 pt-4">
 
                                 <div className="flex flex-row items-center w-full gap-4">
                                     {secondaryAction && secondaryActionLabel && (
@@ -78,6 +78,7 @@ const Modal = ({ isOpen, onClose, onSubmit, title, body, footer, actionLabel, di
                                     )}
                                     <Button label={actionLabel} disabled={disabled} onClick={handleSubmit} />
                                 </div>
+                                {footer}
 
                             </div>
 
